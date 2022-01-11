@@ -1,0 +1,21 @@
+.cards{
+    @include displayflex();
+    padding: 30px 80px;
+}
+
+.card{
+    @include card();
+    @include displayflex($direction:column, $content: space-around);
+}
+
+.container-img, .centered-img{
+    @include containerCard();
+}
+
+#img-personaje{
+    @include imagen-card();
+}
+
+.info-personaje{
+    @include displayflex($direction:column, $content: space-around);
+}
