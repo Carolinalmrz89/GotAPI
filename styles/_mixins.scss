@@ -33,3 +33,12 @@
 @mixin imagen-card (){
     width: 100%;
 }
+
+@mixin botonesNav () {
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    color: #fdd051;
+    font-size: 15px;
+    font-weight: 600;
+}

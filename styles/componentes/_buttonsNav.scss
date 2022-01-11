@@ -1,0 +1,8 @@
+.container-botones-nav{
+    width: 40vw;
+}
+
+.container-botones-nav button {
+    @include botonesNav();
+    @include displayflex($flex-wrap: nowrap);
+}

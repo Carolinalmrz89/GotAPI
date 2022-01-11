@@ -12,6 +12,15 @@ p, h1, h2, h3, h4, h5, h6 {
     font-weight: 600
 }
 
+header nav{
+    @include displayflex($content: space-between, $flex-wrap: nowrap);
+    padding-top: 20px;
+};
+
+h1 img{
+    width: 300px;
+}
+
 ul{
     list-style: none;
     @include displayflex($content: space-evenly, $flex-wrap: nowrap);
