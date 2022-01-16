@@ -1,18 +1,17 @@
 const endpointPersonajes = "https://thronesapi.com/api/v2/Characters"
 const containerCards = document.querySelector(".cards");
 
-const pedirInfo = () =>{
+const pedirInfo = () => {
     fetch(endpointPersonajes)
     .then((res) => res.json())
-    .then((data) =>{
+    .then((data) => {
         crearTarjeta(data);
     })
 }
 
 pedirInfo();
 
-
-const crearTarjeta = (data) =>{
+const crearTarjeta = (data) => {
 
     const mostrarEnHtml = data.reduce((acc, curr) =>{
 
@@ -29,6 +28,27 @@ const crearTarjeta = (data) =>{
     }, "");
 
     containerCards.innerHTML = mostrarEnHtml;
+    asignarClicksACards();
 };
 
 pedirInfo();
+
+const mostrarInfoPersonajes = (id) =>{
+    fetch(`https://thronesapi.com/api/v2/Characters/${id}`)
+    .then((res) => res.json())
+    .then((data) =>{
+        console.log(data)
+    })
+}
+    
+const asignarClicksACards = () =>{
+    const cards = document.querySelectorAll(".card");
+        
+    for (let i = 0; i< cards.length; i++) {
+        cards[i].onclick = () =>{
+            const idPersonajes = cards[i].dataset.id;
+            mostrarInfoPersonajes(idPersonajes);
+            console.log(idPersonajes)
+        }
+    }
+} 
