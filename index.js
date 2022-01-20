@@ -76,7 +76,7 @@ const obtenerLogoFamilia = (familia) => {
 const crearModal = (data) => {
   return `<div class="modal" data-id="${data.id}">
               <div class="container-boton-modal">
-                  <button class="cerrar-modal">Cerrar</button>
+                  <button class="cerrar-modal">X</button>
               </div>
               <div class="info-personaje">
                   <div class="container-img-modal">

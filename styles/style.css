@@ -122,6 +122,15 @@ ul {
   display: none;
 }
 
+.container-modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px 80px;
+}
+
 .modal {
   width: 355px;
   height: 400px;

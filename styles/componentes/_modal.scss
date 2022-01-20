@@ -1,3 +1,8 @@
+.container-modal{
+    @include displayflex();
+    padding: 30px 80px;
+}
+
 .modal {
     @include card($width: 355px, $height: 400px);
     @include displayflex ($direction: column, $content: space-around, $flex-wrap: nowrap);
