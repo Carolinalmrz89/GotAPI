@@ -1,5 +1,6 @@
 const endpointPersonajes = "https://thronesapi.com/api/v2/Characters";
 const containerCards = document.querySelector(".cards");
+const containerModal = document.querySelector(".container-modal");
 
 const pedirInfo = () => {
   fetch(endpointPersonajes)
@@ -9,7 +10,7 @@ const pedirInfo = () => {
     });
 };
 
-pedirInfo();
+
 
 const crearTarjeta = (data) => {
   const mostrarEnHtml = data.reduce((acc, curr) => {
@@ -37,7 +38,7 @@ const mostrarInfoPersonajes = (id) => {
   fetch(`https://thronesapi.com/api/v2/Characters/${id}`)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      abrirModal(data);
     });
 };
 
@@ -46,9 +47,9 @@ const asignarClicksACards = () => {
 
   for (let i = 0; i < cards.length; i++) {
     cards[i].onclick = () => {
+      containerCards.classList.add("ocultar");
       const idPersonajes = cards[i].dataset.id;
       mostrarInfoPersonajes(idPersonajes);
-      console.log(idPersonajes);
     };
   }
 };
@@ -75,7 +76,7 @@ const obtenerLogoFamilia = (familia) => {
 const crearModal = (data) => {
   return `<div class="modal" data-id="${data.id}">
               <div class="container-boton-modal">
-                  <button class="abrir-cerrar-modal">Cerrar</button>
+                  <button class="cerrar-modal">Cerrar</button>
               </div>
               <div class="info-personaje">
                   <div class="container-img-modal">
@@ -94,3 +95,21 @@ const crearModal = (data) => {
               </div>
           </div>`;
 };
+
+const abrirModal = (data) => {
+  containerModal.innerHTML = crearModal(data);
+  containerModal.classList.remove("ocultar");
+  asignarClickCerrarModal();
+};
+
+const asignarClickCerrarModal = () => {
+  const cerrarModal = document.querySelector(".cerrar-modal");
+
+  cerrarModal.onclick = () => {
+    containerModal.innerHTML = "";
+    containerModal.classList.add("ocultar");
+    containerCards.classList.remove("ocultar");
+  };
+};
+
+pedirInfo();
