@@ -10,8 +10,6 @@ const pedirInfo = () => {
     });
 };
 
-
-
 const crearTarjeta = (data) => {
   const mostrarEnHtml = data.reduce((acc, curr) => {
     return (
@@ -53,17 +51,6 @@ const asignarClicksACards = () => {
     };
   }
 };
-
-const arrayFamilias = [
-  {
-    name: "House Targaryen",
-    img: "targaryen_logo.png",
-  },
-  {
-    name: "House Stark",
-    img: "stark_logo.png",
-  },
-];
 
 const obtenerLogoFamilia = (familia) => {
   const logo = arrayFamilias.find((elemento) => {
