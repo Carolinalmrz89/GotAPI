@@ -4,6 +4,9 @@ body {
     background-image: url(/imgs/img_throne.jpg);
     background-repeat: no-repeat;
     background-size: contain;
+    position: inherit;
+    height: auto;
+    overflow: visible;
 }
   
 p, h1, h2, h3, h4, h5, h6 {

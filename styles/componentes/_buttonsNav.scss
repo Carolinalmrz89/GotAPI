@@ -3,6 +3,15 @@
 }
 
 .container-botones-nav button {
-    @include botonesNav();
+    @include botones();
     @include displayflex($flex-wrap: nowrap);
+}
+
+.container-boton-modal {
+    @include displayflex($content: flex-end);
+    width: 100%;
+}
+
+.modal button {
+    @include botones($color: white)
 }

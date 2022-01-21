@@ -6,39 +6,34 @@
     flex-wrap: $flex-wrap;
 }
 
-@mixin card (){
-    width: 160px;
-    height: 220px;
+@mixin card ( $width: 160px, $height: 220px){
+    width: $width;
+    height: $height;
     padding: 15px;
     margin: 15px;
     border: 1px solid #bbbbbb6b;
     border-radius: 5px;
     color: #f5f6f9;
     font-family: "Helvetica";
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    background-color: #000000ab;
+    background-color: #000000ba;
 }
 
-@mixin containerCard (){
-    width: 140px;
-    height: 150px;
+@mixin containerCard ($width: 140px, $height: 150px){
+    width: $width;
+    height: $height;
     object-fit: cover; 
-    object-position: center;
+    object-position: top;
 }
 
 @mixin imagen-card (){
     width: 100%;
 }
 
-@mixin botonesNav () {
+@mixin botones ($color: #fdd051, $font-size: 15px) {
     background-color: transparent;
     border-color: transparent;
     cursor: pointer;
-    color: #fdd051;
-    font-size: 15px;
+    color: $color;
+    font-size: $font-size;
     font-weight: 600;
 }
