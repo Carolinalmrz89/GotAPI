@@ -1,40 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./styles/style.css">
-</head>
-<body>
-    <header>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>
+          <img src="./imgs/logo-titulo.png" alt="logo" />
+        </h1>
+
         <nav>
-            <h1>
-                <img src="./imgs/logo-titulo.png" alt="logo">
-            </h1>
-
-            <div class="container-botones-nav">
-                <ul class="lista-nav">
-                    <li>
-                        <button class="boton-characters">CHARACTERS</button>
-                    </li>
-                    <li class="lista-houses">
-                        <p id="houses">HOUSES ▼</p>
-                        <ul id="container-houses"></ul>
-                    </li>
-                </ul>
-                <form id="form-buscador" action="">
-                    <input type="text" placeholder="Buscar personaje" name="" id="input-buscador">
-                </form>
-            </div>
+          <ul class="lista-nav">
+            <li>
+              <button class="boton-characters">CHARACTERS</button>
+            </li>
+            <li class="lista-houses">
+              <p id="houses">HOUSES ▼</p>
+              <ul id="container-houses"></ul>
+            </li>
+            <li>
+              <form id="form-buscador" action="">
+                <input
+                  type="text"
+                  placeholder="Buscar personaje"
+                  name=""
+                  id="input-buscador"
+                />
+              </form>
+            </li>
+          </ul>
         </nav>
-    </header>
+      </header>
+      <main>
+        <section class="cards"></section>
+        <section class="container-modal"></section>
+      </main>
+    </div>
 
-    <div class="cards"></div>
-    <div class="container-modal"></div>
-    
     <script src="./houses.js"></script>
     <script src="./index.js"></script>
-</body>
+  </body>
 </html>
