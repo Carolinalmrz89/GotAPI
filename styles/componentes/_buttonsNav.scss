@@ -1,24 +1,21 @@
-.container-botones-nav{
-    width: 40vw;
+.lista-nav {
+  @include displayflex($content: space-around, $flex-wrap: nowrap);
+  width: 40vw;
 
-    button {
-        @include botones();
-    }
+  button {
+    @include botones();
+  }
 
-    .lista-nav {
-        @include displayflex($flex-wrap: nowrap);
-    }
-}
-
-.lista-nav li {
+  li {
     margin: 8px;
+  }
 }
 
 .container-boton-modal {
-    @include displayflex($content: flex-end);
-    width: 100%;
+  @include displayflex($content: flex-end);
+  width: 100%;
 }
 
 .modal button {
-    @include botones($color: white)
+  @include botones($color: white);
 }

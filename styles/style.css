@@ -1,36 +1,54 @@
 body {
   margin: 0;
   box-sizing: border-box;
-  background-image: url(/imgs/img_throne.jpg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: inherit;
-  height: auto;
-  overflow: visible;
   font-family: "Helvetica";
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   font-size: 15px;
   font-weight: 600;
 }
 
-header nav {
+header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
-  padding-top: 20px;
+  width: 100%;
+  height: 140px;
+  background-color: #0000009e;
+  position: fixed;
+}
+header h1 {
+  flex-grow: 1;
+}
+header h1 img {
+  width: 300px;
+}
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-grow: 2;
 }
 
-h1 img {
-  width: 300px;
+main {
+  padding-top: 140px;
 }
 
 ul {
   list-style: none;
+  padding: 0;
 }
 
 .cards {
@@ -77,10 +95,15 @@ ul {
   flex-wrap: wrap;
 }
 
-.container-botones-nav {
+.lista-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
   width: 40vw;
 }
-.container-botones-nav button {
+.lista-nav button {
   background-color: transparent;
   border-color: transparent;
   cursor: pointer;
@@ -88,14 +111,6 @@ ul {
   font-size: 15px;
   font-weight: 600;
 }
-.container-botones-nav .lista-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-
 .lista-nav li {
   margin: 8px;
 }
@@ -119,6 +134,19 @@ ul {
 }
 
 .ocultar {
+  display: none;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  background-image: url(/imgs/img_throne.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.container::-webkit-scrollbar {
   display: none;
 }
 
