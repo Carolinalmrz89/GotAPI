@@ -3,6 +3,7 @@ const containerCards = document.querySelector(".cards");
 const containerModal = document.querySelector(".container-modal");
 const containerCasas = document.querySelector("#container-houses");
 const botonHouses = document.querySelector("#houses");
+const botonCharacters = document.querySelector(".boton-characters");
 
 let resultado = [];
 
@@ -11,9 +12,16 @@ const pedirInfo = () => {
     .then((res) => res.json())
     .then((data) => {
       resultado = data;
-      crearTarjeta(resultado);
-      crearListaCasas()
+      iniciar();
     });
+};
+
+const iniciar = () => {
+  botonCharacters.onclick = () => {
+    crearTarjeta(resultado);
+  };
+  crearListaCasas();
+  crearTarjeta(resultado);
 };
 
 const crearTarjeta = (data) => {
