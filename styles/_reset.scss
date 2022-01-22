@@ -26,5 +26,5 @@ h1 img{
 
 ul{
     list-style: none;
-    @include displayflex($content: space-evenly, $flex-wrap: nowrap);
+    // @include displayflex($content: space-evenly, $flex-wrap: nowrap);
 }

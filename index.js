@@ -1,16 +1,20 @@
 const endpointPersonajes = "https://thronesapi.com/api/v2/Characters";
 const containerCards = document.querySelector(".cards");
 const containerModal = document.querySelector(".container-modal");
+const containerCasas = document.querySelector("#container-houses");
+const botonHouses = document.querySelector("#houses");
+
+let resultado = [];
 
 const pedirInfo = () => {
   fetch(endpointPersonajes)
     .then((res) => res.json())
     .then((data) => {
-      crearTarjeta(data);
+      resultado = data;
+      crearTarjeta(resultado);
+      crearListaCasas()
     });
 };
-
-
 
 const crearTarjeta = (data) => {
   const mostrarEnHtml = data.reduce((acc, curr) => {
@@ -53,17 +57,6 @@ const asignarClicksACards = () => {
     };
   }
 };
-
-const arrayFamilias = [
-  {
-    name: "House Targaryen",
-    img: "targaryen_logo.png",
-  },
-  {
-    name: "House Stark",
-    img: "stark_logo.png",
-  },
-];
 
 const obtenerLogoFamilia = (familia) => {
   const logo = arrayFamilias.find((elemento) => {
@@ -110,6 +103,55 @@ const asignarClickCerrarModal = () => {
     containerModal.classList.add("ocultar");
     containerCards.classList.remove("ocultar");
   };
+};
+
+
+const crearListaCasas = () => {
+  const mostrarEnHtml = arrayFamilias.reduce((acc, curr) => {
+    return (
+      acc +
+              `<li>
+                  <button class="casa" data-id="${curr.name}">${curr.name}</button>
+              </li>
+              `
+    );
+  }, "");
+
+  containerCasas.classList.add("ocultar");
+  containerCasas.innerHTML = mostrarEnHtml;
+  mostrarListaCasas();
+  asignarClicksCasas();
+  ocultarListaCasas();
+};
+
+const mostrarListaCasas = () => {
+  botonHouses.onmouseover = () => {
+    containerCasas.classList.remove("ocultar");
+  }
+}
+
+const ocultarListaCasas = () => {
+  botonHouses.onmouseout = () => {
+    containerCasas.classList.add("ocultar");
+  }
+}
+
+const asignarClicksCasas = () => {
+  const casas = document.querySelectorAll(".casa");
+
+  for (let i = 0; i < casas.length; i++) {
+    casas[i].onclick = () => {
+      const idCasa = casas[i].dataset.id;
+      filtrarPorCasa(idCasa);
+    };
+  }
+};
+
+const filtrarPorCasa = (casa) => {
+  const arrayCasa = resultado.filter((personaje) => {
+    return personaje.family == casa;
+  });
+  crearTarjeta(arrayCasa);
 };
 
 pedirInfo();
