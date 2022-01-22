@@ -123,6 +123,10 @@ ul {
   flex-wrap: nowrap;
 }
 
+.lista-nav li {
+  margin: 8px;
+}
+
 .container-boton-modal {
   display: flex;
   flex-direction: row;

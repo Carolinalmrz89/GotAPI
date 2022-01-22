@@ -17,6 +17,10 @@
     @include displayflex($flex-wrap: nowrap);
 }
 
+.lista-nav li {
+    margin: 8px;
+}
+
 .container-boton-modal {
     @include displayflex($content: flex-end);
     width: 100%;
