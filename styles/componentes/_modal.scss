@@ -1,32 +1,36 @@
-.container-modal{
-    @include displayflex();
-    padding: 30px 80px;
-}
+.container-modal {
+  @include displayflex();
 
-.modal {
+  .modal {
     @include card($width: 355px, $height: 400px);
-    @include displayflex ($direction: column, $content: space-around, $flex-wrap: nowrap);
-}
+    @include displayflex(
+      $direction: column,
+      $content: space-around,
+      $flex-wrap: nowrap
+    );
 
-.container-img-modal, .img-modal {
-    @include containerCard($width: 200px, $height: 190px)
-}
+    .container-img-modal,
+    .img-modal {
+      @include containerCard($width: 200px, $height: 190px);
+    }
 
-.info-personaje {
-    @include displayflex()
-}
+    .info-personaje {
+      @include displayflex($direction: column);
+    }
 
-.info-principal {
-    @include displayflex($direction: column)
-}
+    .info-principal {
+      @include displayflex($direction: column);
 
-.info-principal p {
-    margin-top: 10px;
-    text-align: center;
-}
+      p {
+        margin-top: 10px;
+        text-align: center;
+      }
 
-.info-principal img {
-    width: 70px;
-    height: 70px;
-    margin-top: 15px;
+      img {
+        width: 70px;
+        height: 70px;
+        margin-top: 15px;
+      }
+    }
+  }
 }
