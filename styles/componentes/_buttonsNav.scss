@@ -1,20 +1,13 @@
 .container-botones-nav{
     width: 40vw;
-}
 
-.container-botones-nav button {
-    @include botones();
-    @include displayflex($flex-wrap: nowrap);
-}
+    button {
+        @include botones();
+    }
 
-.container-botones-nav, .lista-nav {
-    @include botones();
-    @include displayflex($flex-wrap: nowrap);
-}
-
-.container-botones-nav p {
-    @include botones();
-    @include displayflex($flex-wrap: nowrap);
+    .lista-nav {
+        @include displayflex($flex-wrap: nowrap);
+    }
 }
 
 .lista-nav li {

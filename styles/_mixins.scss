@@ -13,8 +13,7 @@
     margin: 15px;
     border: 1px solid #bbbbbb6b;
     border-radius: 5px;
-    color: #f5f6f9;
-    font-family: "Helvetica";
+    color: #f5f6f9; 
     background-color: #000000ba;
 }
 
@@ -38,23 +37,4 @@
     font-weight: 600;
 }
 
-@mixin botonHouses() {
-    position: relative; 
-}
 
-@mixin containerListaCasas { 
-    position: absolute;
-    padding: 0;
-    z-index: 9;
-    padding-top: 10px;
-    background-color: #000000ba;
-}
-
-@mixin formBuscador() {
-    border: 1px solid #fdd0515e;
-    border-radius: 8px;
-    padding: 5px 10px;
-    background: transparent;
-    outline: #fdd0515e;
-    color: white;
-}

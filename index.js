@@ -134,24 +134,9 @@ const crearListaCasas = () => {
     );
   }, "");
 
-  containerCasas.classList.add("ocultar");
   containerCasas.innerHTML = mostrarEnHtml;
-  mostrarListaCasas();
   asignarClicksCasas();
-  ocultarListaCasas();
 };
-
-const mostrarListaCasas = () => {
-  botonHouses.onmouseover = () => {
-    containerCasas.classList.remove("ocultar");
-  }
-}
-
-const ocultarListaCasas = () => {
-  botonHouses.onmouseout = () => {
-    containerCasas.classList.add("ocultar");
-  }
-}
 
 const asignarClicksCasas = () => {
   const casas = document.querySelectorAll(".casa");
