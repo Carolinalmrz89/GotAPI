@@ -7,6 +7,11 @@
     @include displayflex($flex-wrap: nowrap);
 }
 
+.container-botones-nav p {
+    @include botones();
+    @include displayflex($flex-wrap: nowrap);
+}
+
 .container-boton-modal {
     @include displayflex($content: flex-end);
     width: 100%;

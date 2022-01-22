@@ -100,6 +100,20 @@ ul {
   flex-wrap: nowrap;
 }
 
+.container-botones-nav p {
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  color: #fdd051;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
 .container-boton-modal {
   display: flex;
   flex-direction: row;
