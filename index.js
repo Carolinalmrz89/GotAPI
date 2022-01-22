@@ -4,6 +4,8 @@ const containerModal = document.querySelector(".container-modal");
 const containerCasas = document.querySelector("#container-houses");
 const botonHouses = document.querySelector("#houses");
 const botonCharacters = document.querySelector(".boton-characters");
+const formBuscador = document.querySelector("#form-buscador");
+const inputBuscador = document.querySelector("#input-buscador");
 
 let resultado = [];
 
@@ -20,7 +22,14 @@ const iniciar = () => {
   botonCharacters.onclick = () => {
     crearTarjeta(resultado);
   };
+
   crearListaCasas();
+
+  formBuscador.onsubmit = (e) => {
+    e.preventDefault();
+    buscarPersonaje(inputBuscador.value);
+  };
+
   crearTarjeta(resultado);
 };
 
@@ -160,6 +169,14 @@ const filtrarPorCasa = (casa) => {
     return personaje.family == casa;
   });
   crearTarjeta(arrayCasa);
+};
+
+const buscarPersonaje = (busqueda) => {
+  const resultadoBusqueda = resultado.filter((personaje) => {
+    return personaje.fullName.toLowerCase().includes(busqueda.toLowerCase());
+  });
+
+  crearTarjeta(resultadoBusqueda);
 };
 
 pedirInfo();
