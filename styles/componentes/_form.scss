@@ -1,0 +1,12 @@
+#form-buscador input {
+    @include formBuscador();
+}
+
+#form-buscador input:focus {
+    @include formBuscador();
+}
+
+#form-buscador input::placeholder {
+    color: rgba(231, 230, 230, 0.767);
+    margin-left: 4px;
+}
