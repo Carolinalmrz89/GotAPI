@@ -1,12 +1,17 @@
 const endpointPersonajes = "https://thronesapi.com/api/v2/Characters";
 const containerCards = document.querySelector(".cards");
 const containerModal = document.querySelector(".container-modal");
+const containerCasas = document.querySelector("#houses");
+
+let resultado = [];
 
 const pedirInfo = () => {
   fetch(endpointPersonajes)
     .then((res) => res.json())
     .then((data) => {
-      crearTarjeta(data);
+      resultado = data;
+      crearTarjeta(resultado);
+      crearListaCasas()
     });
 };
 
@@ -97,6 +102,41 @@ const asignarClickCerrarModal = () => {
     containerModal.classList.add("ocultar");
     containerCards.classList.remove("ocultar");
   };
+};
+
+
+const crearListaCasas = () => {
+  const mostrarEnHtml = arrayFamilias.reduce((acc, curr) => {
+    return (
+      acc +
+              `<li>
+                  <button class="casa" data-id="${curr.name}">${curr.name}</button>
+              </li>
+              `
+    );
+  }, "");
+
+  containerCasas.innerHTML = mostrarEnHtml;
+  asignarClicksCasas();
+};
+
+
+const asignarClicksCasas = () => {
+  const casas = document.querySelectorAll(".casa");
+
+  for (let i = 0; i < casas.length; i++) {
+    casas[i].onclick = () => {
+      const idCasa = casas[i].dataset.id;
+      filtrarPorCasa(idCasa);
+    };
+  }
+};
+
+const filtrarPorCasa = (casa) => {
+  const arrayCasa = resultado.filter((personaje) => {
+    return personaje.family == casa;
+  });
+  crearTarjeta(arrayCasa);
 };
 
 pedirInfo();
