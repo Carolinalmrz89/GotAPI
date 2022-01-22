@@ -226,4 +226,27 @@ ul {
   background-color: #000000ba;
 }
 
+#form-buscador input {
+  border: 1px solid #fdd0515e;
+  border-radius: 8px;
+  padding: 5px 10px;
+  background: transparent;
+  outline: #fdd0515e;
+  color: white;
+}
+
+#form-buscador input:focus {
+  border: 1px solid #fdd0515e;
+  border-radius: 8px;
+  padding: 5px 10px;
+  background: transparent;
+  outline: #fdd0515e;
+  color: white;
+}
+
+#form-buscador input::placeholder {
+  color: rgba(231, 230, 230, 0.767);
+  margin-left: 4px;
+}
+
 /*# sourceMappingURL=style.css.map */

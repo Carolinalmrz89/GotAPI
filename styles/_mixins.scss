@@ -49,3 +49,12 @@
     padding-top: 10px;
     background-color: #000000ba;
 }
+
+@mixin formBuscador() {
+    border: 1px solid #fdd0515e;
+    border-radius: 8px;
+    padding: 5px 10px;
+    background: transparent;
+    outline: #fdd0515e;
+    color: white;
+}
