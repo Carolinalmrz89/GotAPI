@@ -7,6 +7,7 @@ body {
   position: inherit;
   height: auto;
   overflow: visible;
+  font-family: "Helvetica";
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -49,7 +50,6 @@ ul {
   border: 1px solid #bbbbbb6b;
   border-radius: 5px;
   color: #f5f6f9;
-  font-family: "Helvetica";
   background-color: #000000ba;
   display: flex;
   flex-direction: column;
@@ -80,7 +80,6 @@ ul {
 .container-botones-nav {
   width: 40vw;
 }
-
 .container-botones-nav button {
   background-color: transparent;
   border-color: transparent;
@@ -88,34 +87,8 @@ ul {
   color: #fdd051;
   font-size: 15px;
   font-weight: 600;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
 }
-
-.container-botones-nav, .lista-nav {
-  background-color: transparent;
-  border-color: transparent;
-  cursor: pointer;
-  color: #fdd051;
-  font-size: 15px;
-  font-weight: 600;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-
-.container-botones-nav p {
-  background-color: transparent;
-  border-color: transparent;
-  cursor: pointer;
-  color: #fdd051;
-  font-size: 15px;
-  font-weight: 600;
+.container-botones-nav .lista-nav {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -166,7 +139,6 @@ ul {
   border: 1px solid #bbbbbb6b;
   border-radius: 5px;
   color: #f5f6f9;
-  font-family: "Helvetica";
   background-color: #000000ba;
   display: flex;
   flex-direction: column;
@@ -209,21 +181,31 @@ ul {
   margin-top: 15px;
 }
 
-#houses {
+.lista-houses {
   position: relative;
 }
-
-#container-houses:hover {
+.lista-houses:hover #container-houses {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: flex-start;
   flex-wrap: nowrap;
+}
+.lista-houses p {
+  color: #fdd051;
+}
+.lista-houses #container-houses {
+  width: 170px;
+  height: 200px;
+  overflow-y: scroll;
+  display: none;
   position: absolute;
   padding: 0;
   z-index: 9;
   padding-top: 10px;
   background-color: #000000ba;
+}
+.lista-houses #container-houses .casa {
+  text-align: start;
 }
 
 /*# sourceMappingURL=style.css.map */

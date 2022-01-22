@@ -1,8 +1,34 @@
-#houses{
-    @include botonHouses();
-}
+.lista-houses {
+  position: relative;
 
-#container-houses:hover {
-    @include displayflex($direction: column, $content: space-around, $align: flex-start, $flex-wrap: nowrap);
-    @include containerListaCasas();
+  &:hover {
+    #container-houses {
+      @include displayflex(
+        $direction: column,
+        $content: null,
+        $align: flex-start,
+        $flex-wrap: nowrap
+      );
+    }
+  }
+
+  p {
+    color: #fdd051;
+  }
+
+  #container-houses {
+    width: 170px;
+    height: 200px;
+    overflow-y: scroll;
+    display: none;
+    position: absolute;
+    padding: 0;
+    z-index: 9;
+    padding-top: 10px;
+    background-color: #000000ba;
+
+    .casa {
+        text-align: start;
+    }
+  }
 }

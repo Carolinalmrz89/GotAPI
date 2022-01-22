@@ -14,7 +14,6 @@
     border: 1px solid #bbbbbb6b;
     border-radius: 5px;
     color: #f5f6f9;
-    font-family: "Helvetica";
     background-color: #000000ba;
 }
 
@@ -38,14 +37,4 @@
     font-weight: 600;
 }
 
-@mixin botonHouses() {
-    position: relative; 
-}
 
-@mixin containerListaCasas { 
-    position: absolute;
-    padding: 0;
-    z-index: 9;
-    padding-top: 10px;
-    background-color: #000000ba;
-}
