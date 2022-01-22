@@ -6,6 +6,7 @@ const botonHouses = document.querySelector("#houses");
 const botonCharacters = document.querySelector(".boton-characters");
 const formBuscador = document.querySelector("#form-buscador");
 const inputBuscador = document.querySelector("#input-buscador");
+const body = document.querySelector("body");
 
 let resultado = [];
 
@@ -37,7 +38,7 @@ const crearTarjeta = (data) => {
   const mostrarEnHtml = data.reduce((acc, curr) => {
     return (
       acc +
-       `<div class="card" data-id="${curr.id}">
+      `<div class="card" data-id="${curr.id}">
             <div class="container-img">
                 <img id="img-personaje" class="centered-img" src="${curr.imageUrl}" alt="">
             </div>
@@ -68,7 +69,7 @@ const asignarClicksACards = () => {
 
   for (let i = 0; i < cards.length; i++) {
     cards[i].onclick = () => {
-      containerCards.classList.add("ocultar");
+      body.style.position = "relative";
       const idPersonajes = cards[i].dataset.id;
       mostrarInfoPersonajes(idPersonajes);
     };
@@ -109,6 +110,7 @@ const crearModal = (data) => {
 const abrirModal = (data) => {
   containerModal.innerHTML = crearModal(data);
   containerModal.classList.remove("ocultar");
+  containerModal.classList.add("mostrar-modal");
   asignarClickCerrarModal();
 };
 
@@ -118,16 +120,16 @@ const asignarClickCerrarModal = () => {
   cerrarModal.onclick = () => {
     containerModal.innerHTML = "";
     containerModal.classList.add("ocultar");
-    containerCards.classList.remove("ocultar");
+    containerModal.classList.remove("mostrar-modal");
+    body.style.position = "inherit";
   };
 };
-
 
 const crearListaCasas = () => {
   const mostrarEnHtml = arrayFamilias.reduce((acc, curr) => {
     return (
       acc +
-              `<li>
+      `<li>
                   <button class="casa" data-id="${curr.name}">${curr.name}</button>
               </li>
               `

@@ -150,16 +150,23 @@ ul {
   display: none;
 }
 
+.mostrar-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000c7;
+}
+
 .container-modal {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: 30px 80px;
 }
-
-.modal {
+.container-modal .modal {
   width: 355px;
   height: 400px;
   padding: 15px;
@@ -174,36 +181,32 @@ ul {
   align-items: center;
   flex-wrap: nowrap;
 }
-
-.container-img-modal, .img-modal {
+.container-modal .modal .container-img-modal,
+.container-modal .modal .img-modal {
   width: 200px;
   height: 190px;
   object-fit: cover;
   object-position: top;
 }
-
-.info-personaje {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.info-principal {
+.container-modal .modal .info-personaje {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
-
-.info-principal p {
+.container-modal .modal .info-principal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.container-modal .modal .info-principal p {
   margin-top: 10px;
   text-align: center;
 }
-
-.info-principal img {
+.container-modal .modal .info-principal img {
   width: 70px;
   height: 70px;
   margin-top: 15px;
