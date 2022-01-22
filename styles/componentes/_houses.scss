@@ -1,0 +1,8 @@
+#houses{
+    @include botonHouses();
+}
+
+#container-houses:hover {
+    @include displayflex($direction: column, $content: space-around, $align: flex-start, $flex-wrap: nowrap);
+    @include containerListaCasas();
+}

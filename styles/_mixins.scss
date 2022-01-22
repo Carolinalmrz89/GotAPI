@@ -37,3 +37,15 @@
     font-size: $font-size;
     font-weight: 600;
 }
+
+@mixin botonHouses() {
+    position: relative; 
+}
+
+@mixin containerListaCasas { 
+    position: absolute;
+    padding: 0;
+    z-index: 9;
+    padding-top: 10px;
+    background-color: #000000ba;
+}
