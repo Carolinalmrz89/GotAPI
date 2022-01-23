@@ -2,7 +2,7 @@
   position: relative;
 
   &:hover {
-    #container-houses {
+    .container-houses {
       @include displayflex(
         $direction: column,
         $content: null,
@@ -16,7 +16,7 @@
     color: #fdd051;
   }
 
-  #container-houses {
+  .container-houses {
     width: 170px;
     height: 200px;
     overflow-y: scroll;
@@ -28,7 +28,7 @@
     background-color: #000000ba;
 
     .casa {
-        text-align: start;
+      text-align: start;
     }
   }
 }

@@ -1,12 +1,16 @@
 const endpointPersonajes = "https://thronesapi.com/api/v2/Characters";
 const containerCards = document.querySelector(".cards");
 const containerModal = document.querySelector(".container-modal");
-const containerCasas = document.querySelector("#container-houses");
+const containerCasas = document.querySelectorAll(".container-houses");
 const botonHouses = document.querySelector("#houses");
-const botonCharacters = document.querySelector(".boton-characters");
-const formBuscador = document.querySelector("#form-buscador");
-const inputBuscador = document.querySelector("#input-buscador");
+const botonCharacters = document.querySelectorAll(".boton-characters");
+const formBuscador = document.querySelectorAll(".form-buscador");
+const inputBuscador = document.querySelectorAll(".input-buscador");
 const body = document.querySelector("body");
+const botonAbrirNav = document.querySelector(".boton-abrir-nav");
+const botonCerrarNav = document.querySelector(".boton-cerrar-nav");
+const iconoMobile = document.querySelector(".fas");
+const navMobile = document.querySelector(".lista-nav-mobile");
 
 let resultado = [];
 
@@ -20,16 +24,13 @@ const pedirInfo = () => {
 };
 
 const iniciar = () => {
-  botonCharacters.onclick = () => {
-    crearTarjeta(resultado);
-  };
+  abrirMenuMobile();
+  cerrarMenuMobile();
+
+  mostrarTodosPersonajes();
 
   crearListaCasas();
-
-  formBuscador.onsubmit = (e) => {
-    e.preventDefault();
-    buscarPersonaje(inputBuscador.value);
-  };
+  searchForms();
 
   crearTarjeta(resultado);
 };
@@ -136,7 +137,9 @@ const crearListaCasas = () => {
     );
   }, "");
 
-  containerCasas.innerHTML = mostrarEnHtml;
+  for (let i = 0; i < containerCasas.length; i++) {
+    containerCasas[i].innerHTML = mostrarEnHtml;
+  }
   asignarClicksCasas();
 };
 
@@ -166,4 +169,39 @@ const buscarPersonaje = (busqueda) => {
   crearTarjeta(resultadoBusqueda);
 };
 
+const abrirMenuMobile = () => {
+  botonAbrirNav.onclick = (e) => {
+    e.preventDefault();
+    botonAbrirNav.classList.add("ocultar");
+    botonCerrarNav.classList.remove("ocultar");
+    navMobile.classList.add("mostrar-nav-mobile");
+  };
+};
+
+const cerrarMenuMobile = () => {
+  botonCerrarNav.onclick = (e) => {
+    e.preventDefault();
+    botonAbrirNav.classList.remove("ocultar");
+    botonCerrarNav.classList.add("ocultar");
+    navMobile.classList.remove("mostrar-nav-mobile");
+  };
+};
+
+const searchForms = () => {
+  for (let i = 0; i < formBuscador.length; i++) {
+    formBuscador[i].onsubmit = (e) => {
+      e.preventDefault();
+      buscarPersonaje(inputBuscador[i].value);
+      inputBuscador[i].value = "";
+    };
+  }
+};
+
+const mostrarTodosPersonajes = () => {
+  for (let i = 0; i < botonCharacters.length; i++) {
+    botonCharacters[i].onclick = () => {
+      crearTarjeta(resultado);
+    };
+  }
+};
 pedirInfo();

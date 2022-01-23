@@ -1,0 +1,56 @@
+.lista-nav {
+  display: none;
+
+  @include m1110 {
+    @include displayflex($content: space-around, $flex-wrap: nowrap);
+    width: 40vw;
+
+    button {
+      @include botones();
+    }
+
+    li {
+      margin: 8px;
+    }
+  }
+}
+
+.boton-nav {
+  @include botones($font-size: 24px);
+  margin-right: 10px;
+
+  @include m1110 {
+    display: none;
+  }
+}
+
+.lista-nav-mobile {
+  display: none;
+
+  &.mostrar-nav-mobile {
+    margin-right: 20px;
+    text-align: end;
+
+    @include displayflex(
+      $direction: column,
+      $content: space-around,
+      $flex-wrap: nowrap
+    );
+
+    button {
+      @include botones();
+    }
+
+    li {
+      width: 100%;
+    }
+
+    .container-houses {
+      right: 0;
+    }
+  }
+
+  .form-buscador {
+    display: none;
+  }
+}

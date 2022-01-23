@@ -1,21 +1,25 @@
-.cards{
-    @include displayflex();
+.cards {
+  @include displayflex();
+
+  @include m1200 {
     padding: 30px 80px;
+  }
 }
 
-.card{
-    @include card();
-    @include displayflex($direction:column, $content: space-around);
+.card {
+  @include card();
+  @include displayflex($direction: column, $content: space-around);
 }
 
-.container-img, .centered-img{
-    @include containerCard();
+.container-img,
+.centered-img {
+  @include containerCard();
 }
 
-#img-personaje{
-    @include imagen-card();
+#img-personaje {
+  @include imagen-card();
 }
 
-.info-personaje{
-    @include displayflex($direction:column, $content: space-around);
+.info-personaje {
+  @include displayflex($direction: column, $content: space-around);
 }
