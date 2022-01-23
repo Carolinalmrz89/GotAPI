@@ -27,17 +27,45 @@ header {
     flex-grow: 1;
 
     img {
-      width: 300px;
+      width: 220px;
+
+      @include m1200 {
+        width: 300px;
+      }
     }
   }
+
   nav {
-    @include displayflex($content: flex-end, $flex-wrap: nowrap);
-    flex-grow: 2;
+    @include displayflex(
+      $direction: column,
+      $content: flex-end,
+      $flex-wrap: nowrap,
+      $align: flex-end
+    );
+
+    @include m1200 {
+      @include displayflex($content: flex-end, $flex-wrap: nowrap);
+      flex-grow: 2;
+    }
   }
 }
 
 main {
   padding-top: 140px;
+
+  .form-buscador {
+    margin-top: 15px;
+
+    @include displayflex();
+
+    @include m1200 {
+      display: none;
+    }
+
+    input {
+      background: #000000b8;
+    }
+  }
 }
 
 ul {

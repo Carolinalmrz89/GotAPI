@@ -2,12 +2,22 @@
   @include displayflex();
 
   .modal {
-    @include card($width: 355px, $height: 400px);
+    @include card($width: 260px, $height: 400px);
+
     @include displayflex(
       $direction: column,
       $content: space-around,
       $flex-wrap: nowrap
     );
+
+    .container-boton-modal {
+      @include displayflex($content: flex-end);
+      width: 100%;
+    }
+
+    button {
+      @include botones($color: white);
+    }
 
     .container-img-modal,
     .img-modal {
@@ -31,6 +41,12 @@
         height: 70px;
         margin-top: 15px;
       }
+    }
+  }
+
+  @include m1200 {
+    .modal {
+      @include card($width: 355px, $height: 400px);
     }
   }
 }

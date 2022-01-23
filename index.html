@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./styles/style.css" />
+    <script
+      src="https://kit.fontawesome.com/fc93a7f461.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="container">
@@ -20,22 +24,46 @@
               <button class="boton-characters">CHARACTERS</button>
             </li>
             <li class="lista-houses">
-              <p id="houses">HOUSES ▼</p>
-              <ul id="container-houses"></ul>
+              <p class="houses">HOUSES ▼</p>
+              <ul class="container-houses"></ul>
             </li>
             <li>
-              <form id="form-buscador" action="">
+              <form class="form-buscador">
                 <input
                   type="text"
                   placeholder="Search character"
-                  id="input-buscador"
+                  class="input-buscador"
                 />
               </form>
+            </li>
+          </ul>
+
+          <button class="boton-nav boton-abrir-nav">
+            <i class="fas fa-bars"></i>
+          </button>
+          <button class="boton-nav boton-cerrar-nav ocultar">
+            <i class="fas fa-times"></i>
+          </button>
+
+          <ul class="lista-nav-mobile">
+            <li>
+              <button class="boton-characters">CHARACTERS</button>
+            </li>
+            <li class="lista-houses">
+              <p class="houses">HOUSES ▼</p>
+              <ul class="container-houses"></ul>
             </li>
           </ul>
         </nav>
       </header>
       <main>
+        <form class="form-buscador">
+          <input
+            type="text"
+            placeholder="Search character"
+            class="input-buscador"
+          />
+        </form>
         <section class="cards"></section>
         <section class="container-modal"></section>
       </main>

@@ -50,3 +50,17 @@
   outline: #fdd0515e;
   color: white;
 }
+
+/********* BREAKPOINTS *********/
+
+@mixin m1110 {
+  @media (min-width: 1110px) {
+    @content;
+  }
+}
+
+@mixin m1200 {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
