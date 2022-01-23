@@ -85,7 +85,7 @@ const arrayFamilias = [
     img: "noimg.png",
   },
   {
-    name: "Lorath",
+    name: "Lorathi",
     img: "noimg.png",
   },
   {
