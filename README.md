@@ -1,4 +1,4 @@
-# ✦ Proyecto: **Game of Thones: API**
+# ✦ Proyecto: **Game of Thrones: API**
 
 Este proyecto forma parte del sexto módulo del curso Desarrollo Web Front End, dictado por AdaITW. La propuesta consiste en crear una aplicación que permita listar información sobre un tema a elección, comunicándote con una API pública.
 
