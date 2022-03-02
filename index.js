@@ -24,6 +24,7 @@ const pedirInfo = () => {
 };
 
 const iniciar = () => {
+  // excelente esta funcion
   abrirMenuMobile();
   cerrarMenuMobile();
 
@@ -55,6 +56,8 @@ const crearTarjeta = (data) => {
   asignarClicksACards();
 };
 
+// todas las funciones que se ejecutan apenas carga la pagina deberian estar al final de todo,
+// para que el flujo de ejecucion sea mas claro
 pedirInfo();
 
 const mostrarInfoPersonajes = (id) => {
@@ -137,6 +140,7 @@ const crearListaCasas = () => {
     );
   }, "");
 
+  // No es necesario un for aca, si escribis containerCasas[i].innerHTML = mostrarEnHtml; es lo mismo
   for (let i = 0; i < containerCasas.length; i++) {
     containerCasas[i].innerHTML = mostrarEnHtml;
   }
@@ -204,4 +208,6 @@ const mostrarTodosPersonajes = () => {
     };
   }
 };
+
+// Repetis innecesariamente la ejecucion de esta funcion
 pedirInfo();
