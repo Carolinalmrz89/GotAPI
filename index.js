@@ -11,8 +11,11 @@ const botonAbrirNav = document.querySelector(".boton-abrir-nav");
 const botonCerrarNav = document.querySelector(".boton-cerrar-nav");
 const iconoMobile = document.querySelector(".fas");
 const navMobile = document.querySelector(".lista-nav-mobile");
+const paginationButtons = document.querySelector(".pagination-buttons");
 
 let resultado = [];
+let paginaActual = 1;
+let cardsPorPagina = 10;
 
 const pedirInfo = () => {
   fetch(endpointPersonajes)
@@ -31,8 +34,9 @@ const iniciar = () => {
 
   crearListaCasas();
   searchForms();
+  crearBotonesPaginacion();
 
-  crearTarjeta(resultado);
+  crearTarjeta(resultado.slice(0, cardsPorPagina));
 };
 
 const crearTarjeta = (data) => {
@@ -204,4 +208,13 @@ const mostrarTodosPersonajes = () => {
     };
   }
 };
+
+const crearBotonesPaginacion = () => {
+  paginationButtons.innerHTML = `
+    <div class="container-buttons">
+       <button class="next-button"><i class="fa-solid fa-angle-left"></i> Prev </button>
+       <button class="prev-button"> Next <i class="fa-solid fa-angle-right"></i></button>
+    </div>`;
+};
+
 pedirInfo();

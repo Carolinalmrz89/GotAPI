@@ -1,0 +1,7 @@
+.container-buttons {
+  @include displayflex;
+
+  button {
+    @include botones;
+  }
+}
