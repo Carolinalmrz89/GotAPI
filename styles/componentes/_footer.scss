@@ -1,10 +1,10 @@
 .lista-footer {
-  @include displayflex($content: space-around, $flex-wrap: nowrap);
+  @include displayflex($content: space-evenly, $flex-wrap: nowrap);
   width: 200px;
   margin: 0;
 
   a,
   i {
-    color: #fdd051;
+    color: #fdd051c9;
   }
 }
