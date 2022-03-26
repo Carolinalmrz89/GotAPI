@@ -172,6 +172,10 @@ footer p {
     margin: 8px;
   }
 }
+.lista-nav .fa-caret-down {
+  font-size: 20px;
+  margin-left: 8px;
+}
 
 .boton-nav {
   background-color: transparent;
