@@ -36,7 +36,12 @@ const iniciar = () => {
   searchForms();
   crearBotonesPaginacion();
 
-  crearTarjeta(resultado.slice(0, cardsPorPagina));
+  crearTarjeta(
+    resultado.slice(
+      (paginaActual - 1) * cardsPorPagina,
+      (paginaActual - 1) * cardsPorPagina + cardsPorPagina
+    )
+  );
 };
 
 const crearTarjeta = (data) => {
@@ -58,8 +63,6 @@ const crearTarjeta = (data) => {
   containerCards.innerHTML = mostrarEnHtml;
   asignarClicksACards();
 };
-
-pedirInfo();
 
 const mostrarInfoPersonajes = (id) => {
   fetch(`https://thronesapi.com/api/v2/Characters/${id}`)
@@ -135,9 +138,9 @@ const crearListaCasas = () => {
     return (
       acc +
       `<li>
-                  <button class="casa" data-id="${curr.name}">${curr.name}</button>
-              </li>
-              `
+          <button class="casa" data-id="${curr.name}">${curr.name}</button>
+       </li>
+      `
     );
   }, "");
 
@@ -212,9 +215,30 @@ const mostrarTodosPersonajes = () => {
 const crearBotonesPaginacion = () => {
   paginationButtons.innerHTML = `
     <div class="container-buttons">
-       <button class="next-button"><i class="fa-solid fa-angle-left"></i> Prev </button>
-       <button class="prev-button"> Next <i class="fa-solid fa-angle-right"></i></button>
+       <button class="prev-button"><i class="fa-solid fa-angle-left"></i> Prev </button>
+       <button class="next-button"> Next <i class="fa-solid fa-angle-right"></i></button>
     </div>`;
+
+  cambiarPagina();
+};
+
+const cambiarPagina = () => {
+  const nextButton = document.querySelector(".next-button");
+  const prevButton = document.querySelector(".prev-button");
+  let ultimaPagina = Math.ceil(resultado.length / cardsPorPagina);
+
+  prevButton.onclick = () => {
+    paginaActual--;
+    iniciar();
+  };
+
+  nextButton.onclick = () => {
+    paginaActual++;
+    iniciar();
+  };
+
+  nextButton.disabled = paginaActual === ultimaPagina;
+  prevButton.disabled = paginaActual === 1;
 };
 
 pedirInfo();
