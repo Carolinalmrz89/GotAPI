@@ -78,7 +78,8 @@ footer {
   width: 100%;
   height: 40px;
   background-color: #0000009e;
-  margin-top: 30px;
+  position: absolute;
+  bottom: 0;
   p {
     font-size: 14px;
     font-weight: 600;
