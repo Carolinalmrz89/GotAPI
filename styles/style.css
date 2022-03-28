@@ -59,6 +59,7 @@ header nav {
 
 main {
   padding-top: 140px;
+  margin-bottom: 40px;
 }
 main .form-buscador {
   margin-top: 15px;
@@ -91,8 +92,9 @@ footer {
   width: 100%;
   height: 40px;
   background-color: #0000009e;
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  margin-top: 20px;
 }
 footer p {
   font-size: 14px;
@@ -229,13 +231,12 @@ footer p {
 
 .container {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   overflow-y: scroll;
   background-image: url(/imgs/img_throne.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  position: relative;
   padding-bottom: 70px;
 }
 .container::-webkit-scrollbar {
