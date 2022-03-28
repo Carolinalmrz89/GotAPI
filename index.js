@@ -207,7 +207,12 @@ const searchForms = () => {
 const mostrarTodosPersonajes = () => {
   for (let i = 0; i < botonCharacters.length; i++) {
     botonCharacters[i].onclick = () => {
-      crearTarjeta(resultado);
+      crearTarjeta(
+        resultado.slice(
+          (paginaActual - 1) * cardsPorPagina,
+          (paginaActual - 1) * cardsPorPagina + cardsPorPagina
+        )
+      );
     };
   }
 };
