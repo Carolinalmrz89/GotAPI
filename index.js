@@ -211,10 +211,12 @@ const mostrarTodosPersonajes = () => {
         resultado.slice(
           (paginaActual - 1) * cardsPorPagina,
           (paginaActual - 1) * cardsPorPagina + cardsPorPagina
-        )
+        ),
+        (paginaActual = 1)
       );
     };
   }
+  crearBotonesPaginacion();
 };
 
 const crearBotonesPaginacion = () => {
